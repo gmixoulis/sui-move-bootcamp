@@ -12,7 +12,7 @@ describe("Mint a Hero NFT, a Weapon NFT and equip it", () => {
 
   beforeAll(async () => {
     txResponse = await mintHeroWithWeapon();
-    await suiClient.waitForTransaction({ digest: txResponse.digest });
+    await suiClient.waitForTransaction({ digest: txResponse.digest, timeout: 5_000 });
     console.log("Executed transaction with txDigest:", txResponse.digest);
   });
 
@@ -41,9 +41,5 @@ describe("Mint a Hero NFT, a Weapon NFT and equip it", () => {
     expect(ids.length).toBeGreaterThan(0);
     expect(ids).toContain(heroId);
     expect(counter).toBeGreaterThan(0);
-  });
-
-  test("Heroes data", async () => {
-    
   });
 });

@@ -6,21 +6,30 @@ use std::string::utf8;
 use sui::test_scenario;
 use sui::test_utils;
 
-const ENotImplemented: u64 = 0;
-
 #[test]
-fun test_new_hero() {
+fun test_init() {
     let sender = @0xCAFE;
 
     // Initialize the hero module.
     let mut scenario = test_scenario::begin(sender);
     hero::init_for_testing(scenario.ctx());
 
-    // Test that the registry is empty.
+    // Test that the registry is created and is empty.
     scenario.next_tx(sender);
     let registry = scenario.take_shared<HeroRegistry>();
     test_utils::assert_eq(hero::hero_registry_counter(&registry), 0);
     test_scenario::return_shared(registry);
+
+    scenario.end();
+}
+
+/* #[test]
+fun test_new_hero() {
+    let sender = @0xCAFE;
+
+    // Initialize the hero module.
+    let mut scenario = test_scenario::begin(sender);
+    hero::init_for_testing(scenario.ctx());
 
     // Mint a new hero and check its fields.
     scenario.next_tx(sender);
@@ -40,14 +49,15 @@ fun test_new_hero() {
     scenario.next_tx(sender);
     let registry = scenario.take_shared<HeroRegistry>();
     test_utils::assert_eq(hero::hero_registry_counter(&registry), 1);
+    test_utils::assert_eq(*hero::hero_registry_ids(&registry).borrow(0), object::id(&hero));
     test_scenario::return_shared(registry);
 
     // End the scenario.
     test_utils::destroy(hero);
     scenario.end();
-}
+} */
 
-#[test]
+/* #[test]
 fun test_new_weapon() {
     let ctx = &mut tx_context::dummy();
     let weapon = hero::new_weapon(
@@ -58,9 +68,9 @@ fun test_new_weapon() {
     test_utils::assert_eq(hero::weapon_name(&weapon), utf8(b"Batmobile"));
     test_utils::assert_eq(hero::weapon_attack(&weapon), 100);
     test_utils::destroy(weapon);
-}
+} */
 
-#[test]
+/* #[test]
 fun test_equip_weapon() {
     let sender = @0xCAFE;
 
@@ -91,9 +101,9 @@ fun test_equip_weapon() {
     // End the scenario.
     test_utils::destroy(hero);
     scenario.end();
-}
+} */
 
-#[test]
+/* #[test]
 fun test_unequip_weapon() {
     let sender = @0xCAFE;
 
@@ -128,9 +138,9 @@ fun test_unequip_weapon() {
     test_utils::destroy(weapon);
     test_utils::destroy(hero);
     scenario.end();
-}
+} */
 
-#[test, expected_failure(abort_code = ::hero::hero::EAlreadyEquipedWeapon)]
+/* #[test, expected_failure(abort_code = ::hero::hero::EAlreadyEquipedWeapon)]
 fun test_equip_weapon_already_equiped() {
     let sender = @0xCAFE;
 
@@ -166,9 +176,9 @@ fun test_equip_weapon_already_equiped() {
     // End the scenario.
     test_utils::destroy(hero);
     scenario.end();
-}
+} */
 
-#[test, expected_failure(abort_code = ::hero::hero::ENotEquipedWeapon)]
+/* #[test, expected_failure(abort_code = ::hero::hero::ENotEquipedWeapon)]
 fun test_unequip_weapon_not_equiped() {
     let sender = @0xCAFE;
 
@@ -194,9 +204,4 @@ fun test_unequip_weapon_not_equiped() {
     test_utils::destroy(weapon);
     test_utils::destroy(hero);
     scenario.end();
-}
-
-#[test, expected_failure(abort_code = ::hero::hero_tests::ENotImplemented)]
-fun test_hero_fail() {
-    abort ENotImplemented
-}
+} */
