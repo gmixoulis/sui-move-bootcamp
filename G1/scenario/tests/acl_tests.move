@@ -12,7 +12,7 @@ fun test_add_admin() {
 
     // Initialize package
     let mut scenario = test_scenario::begin(initial_admin);
-    acl::init_for_testing(scenario.ctx());
+    acl::init(sui::test_utils::create_one_time_witness<acl::ACL>(), scenario.ctx());
 
     let begin_effects = scenario.next_tx(initial_admin);
     let created = begin_effects.created();

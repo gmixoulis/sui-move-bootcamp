@@ -83,18 +83,18 @@ There are four main test files to implement in this project:
 In `acl.move`, implement:
 - `init_for_testing` - Initialize the ACL system for testing purposes
 
-### 2. Hero Tests
-In `hero_tests.move`, implement the following test cases:
-- `test_mint` - Verify that a Hero can be minted with the correct health and stamina values
-- `test_level_up` - Verify that a Hero's stats increase correctly when using an XP Tome
+### 2. ACL Tests
+In `acl_tests.move`, implement the following test case:
+- `test_add_admin` - Verify that new admins can be added and authorized correctly
 
 ### 3. XP Tome Tests
 In `xp_tome_tests.move`, implement the following test case:
 - `test_new_xp_tome` - Verify that an XP Tome can be created with the correct health and stamina values
 
-### 4. ACL Tests
-In `acl_tests.move`, implement the following test case:
-- `test_add_admin` - Verify that new admins can be added and authorized correctly
+### 4. Hero Tests
+In `hero_tests.move`, implement the following test cases:
+- `test_mint` - Verify that a Hero can be minted with the correct health and stamina values
+- `test_level_up` - Verify that a Hero's stats increase correctly when using an XP Tome
 
 ## Useful Links
 
