@@ -69,3 +69,4 @@ In `hero.move`, add:
 ## Useful Links
 
 - [Package Upgrades Documentation](https://docs.sui.io/concepts/sui-move-concepts/packages/upgrade)
+- [Package Upgrade Requirements](https://docs.sui.io/concepts/sui-move-concepts/packages/upgrade#upgrade-requirements)

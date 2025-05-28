@@ -38,16 +38,8 @@ public fun mint_hero(version: &Version, ctx: &mut TxContext): Hero {
 }
 
 // Task: Implement mint_hero_v2 that accepts payment
-public fun mint_hero_v2(version: &Version, payment: Coin<SUI>, ctx: &mut TxContext): Hero {
-    version.check_is_valid();
-    // Task: Check payment amount is 5 SUI
-    // Task: Burn payment
-    Hero {
-        id: object::new(ctx),
-        health: 100,
-        stamina: 10
-    }
-}
+// public fun mint_hero_v2(version: &Version, payment: Coin<SUI>, ctx: &mut TxContext): Hero {
+// }
 
 /// Hero can equip a single sword.
 /// Equiping a sword increases the `Hero`'s power by its attack.
@@ -82,9 +74,9 @@ public fun stamina(self: &Hero): u64 {
 }
 
 // Task: Add power getter
-public fun power(self: &Hero): u64 {
-    0
-}
+// public fun power(self: &Hero): u64 {
+//     0
+// }
 
 /// Returns the sword the hero has equipped.
 /// Aborts if it does not exists
