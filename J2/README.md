@@ -10,7 +10,7 @@ The app will have a simple view, listing the Hero NFTs, as they are returned by 
 
 First of all, let's validate that the `indexer-js` and the REST API of the previous exercise are running:
 
-1. Cd into the `J1/indexer-js` directory, and in addition to the previous steps, run the following command to start the development server of the REST API locally:
+1. Cd into the [J1/indexer-js/hero-js-indexer](../J1/indexer-js/hero-js-indexer/) directory, and in addition to the previous steps, run the following command to start the development server of the REST API locally:
 
 ```
 pnpm run api:dev
@@ -43,7 +43,7 @@ Now, we should be ready to build a simple UI, to fetch and display this data.
 
 1. In an approach similar to the section E2, we will be using the [@mysten/create-dapp](https://sdk.mystenlabs.com/dapp-kit/create-dapp) CLI tool to bootstrap a new React app with Vite, and integrate the [Sui dApp Kit](https://sdk.mystenlabs.com/dapp-kit) package.
 
-   1. `npm create @mysten/dapp`
+   1. `pnpm create @mysten/create-dapp`
    2. `cd <app-name>`
    3. `pnpm i`
    4. `pnpm run dev`
